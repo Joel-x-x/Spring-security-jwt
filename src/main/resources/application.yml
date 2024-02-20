@@ -6,8 +6,20 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       format_sql: true
       show_sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    open-in-view: false
+
+server:
+  error:
+    include-stacktrace: never
+
+# JWT
+jwt:
+  secret:
+    key: MgNkXjMsd4DyflPfNEYsVGQXiVI3l0qR
+  time:
+    expiration: 86400000
